@@ -12,6 +12,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Cloud_project</servlet-name>
 		<url-pattern>/cloud_project</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Google_books_test</servlet-name>
+		<servlet-class>project.bookinfo.GoogleBooksTestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Google_books_test</servlet-name>
+		<url-pattern>/gbooks_test</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
