@@ -11,6 +11,7 @@ import com.google.api.services.books.Books.Volumes.List;
 import com.google.api.services.books.BooksRequestInitializer;
 import com.google.api.services.books.model.Volume;
 import com.google.api.services.books.model.Volumes;
+import com.google.api.services.books.model.Volume.VolumeInfo.IndustryIdentifiers;
 
 /**
  * Uses Google Books API to run queries on books
@@ -20,6 +21,7 @@ public class GoogleBooks {
 	private JsonFactory jsonFactory;
 	private Books books;
 	private static final String API_KEY = "AIzaSyCYoA48GD3OwD-7n3cyGQYG_DwPX2OQWkQ";
+	private static final String APP_NAME = "cloud-project";
 
 	private BookInfo bookInfo = null;
 
@@ -29,7 +31,7 @@ public class GoogleBooks {
 		// Set up Books client.
 		books = new Books.Builder(GoogleNetHttpTransport.newTrustedTransport(),
 				jsonFactory, null)
-		// .setApplicationName(APPLICATION_NAME)
+				.setApplicationName(APP_NAME)
 				.setGoogleClientRequestInitializer(
 						new BooksRequestInitializer(API_KEY)).build();
 	}
@@ -69,13 +71,18 @@ public class GoogleBooks {
 		// Authors
 		bookInfo.setAuthors(volumeInfo.getAuthors());
 		// Description
-		if (volumeInfo.getDescription() != null
-				&& volumeInfo.getDescription().length() > 0) {
-			System.out.println("Description: " + volumeInfo.getDescription());
-		}
+		bookInfo.setDescription(volumeInfo.getDescription());
 		// Ratings
 		bookInfo.setGoogleRating(volumeInfo.getAverageRating());
 		bookInfo.setGoogleRatingsCount(volumeInfo.getRatingsCount());
+		// ISBN
+		for (IndustryIdentifiers id : volumeInfo.getIndustryIdentifiers()) {
+			if ("ISBN_10".equals(id.getType())
+					|| "ISBN_13".equals(id.getType())) {
+				bookInfo.setIsbn(id.getIdentifier());
+				break;
+			}
+		}
 	}
 
 	/**

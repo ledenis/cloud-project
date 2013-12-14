@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Wrapper class containing informations of a book such as author, title, isbn.
+ * Wrapper class containing informations of a book such as author, title, isbn...
  */
 public class BookInfo {
 	private List<String> authors;
 	private String title;
+	private String description;
 	private String isbn;
 	private double googleRating;
 	private int googleRatingsCount;
@@ -43,6 +44,14 @@ public class BookInfo {
 
 	public void addAuthor(String author) {
 		authors.add(author);
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	/**
