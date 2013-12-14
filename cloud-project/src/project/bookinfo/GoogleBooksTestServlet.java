@@ -15,15 +15,23 @@ public class GoogleBooksTestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		GoogleBooks books = null;
 		BookInfo bookInfo = null;
+
+		// Constructs query
+		String query = req.getParameter("q");
+		if (query == null) {
+			resp.getWriter().println("No 'q' parameter found <br />");
+			query = "isbn:1551923963";
+		}
+
 		try {
 			books = new GoogleBooks();
-			bookInfo = books.query("isbn:1551923963");
+			bookInfo = books.query(query);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		req.setAttribute("bookinfo", bookInfo);
-		
+
 		// Forward to the jsp
 		getServletContext().getRequestDispatcher(
 				"/WEB-INF/google-books-test.jsp").forward(req, resp);
