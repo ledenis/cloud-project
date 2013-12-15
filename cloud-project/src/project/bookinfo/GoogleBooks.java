@@ -84,11 +84,13 @@ public class GoogleBooks {
 		else
 			bookInfo.setGoogleRatingsCount(0);
 		// ISBN
-		for (IndustryIdentifiers id : volumeInfo.getIndustryIdentifiers()) {
-			if ("ISBN_10".equals(id.getType())
-					|| "ISBN_13".equals(id.getType())) {
-				bookInfo.setIsbn(id.getIdentifier());
-				break;
+		if (volumeInfo.getIndustryIdentifiers() != null) {
+			for (IndustryIdentifiers id : volumeInfo.getIndustryIdentifiers()) {
+				if ("ISBN_10".equals(id.getType())
+						|| "ISBN_13".equals(id.getType())) {
+					bookInfo.setIsbn(id.getIdentifier());
+					break;
+				}
 			}
 		}
 	}
