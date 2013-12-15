@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Wrapper class containing informations of a book such as author, title, isbn...
+ * Wrapper class containing informations of a book such as author, title,
+ * isbn...
  */
 public class BookInfo {
 	private List<String> authors;
@@ -64,7 +65,7 @@ public class BookInfo {
 	}
 
 	/**
-	 * @return the user rating in Google Books
+	 * @return the average user rating in Google Books, or -1.0 if none
 	 */
 	public double getGoogleRating() {
 		return googleRating;

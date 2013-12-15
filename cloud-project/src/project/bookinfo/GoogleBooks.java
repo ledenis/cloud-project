@@ -41,7 +41,7 @@ public class GoogleBooks {
 	 * 
 	 * @param query
 	 *            Query format:
-	 *            "[inauthor|isbn|intitle|inpublisher|subject>]<query>"
+	 *            "[inauthor|isbn|intitle|inpublisher|subject:]<query>"
 	 * @return The first result as a BookInfo object, or null if no books found
 	 * @throws IOException
 	 */
@@ -75,8 +75,14 @@ public class GoogleBooks {
 		// Description
 		bookInfo.setDescription(volumeInfo.getDescription());
 		// Ratings
-		bookInfo.setGoogleRating(volumeInfo.getAverageRating());
-		bookInfo.setGoogleRatingsCount(volumeInfo.getRatingsCount());
+		if (volumeInfo.getAverageRating() != null)
+			bookInfo.setGoogleRating(volumeInfo.getAverageRating());
+		else
+			bookInfo.setGoogleRating(-1.0);
+		if (volumeInfo.getRatingsCount() != null)
+			bookInfo.setGoogleRatingsCount(volumeInfo.getRatingsCount());
+		else
+			bookInfo.setGoogleRatingsCount(0);
 		// ISBN
 		for (IndustryIdentifiers id : volumeInfo.getIndustryIdentifiers()) {
 			if ("ISBN_10".equals(id.getType())
