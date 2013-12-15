@@ -50,7 +50,7 @@ public class GoogleBooks {
 	public BookInfo query(String query) throws IOException {
 		// Set query string (and filter)
 		List volumesList = books.volumes().list(query);
-		// volumesList.setFilter("ebooks");
+		volumesList.setFilter("ebooks");
 
 		// Execute the query.
 		Volumes volumes = volumesList.execute();
