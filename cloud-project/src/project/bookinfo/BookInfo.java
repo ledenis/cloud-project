@@ -9,6 +9,7 @@ import java.util.List;
 public class BookInfo {
 	private List<String> authors;
 	private String title;
+	private String publisher;
 	private String description;
 	private String isbn;
 	private double googleRating;
@@ -44,6 +45,14 @@ public class BookInfo {
 
 	public void addAuthor(String author) {
 		authors.add(author);
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 
 	public String getDescription() {

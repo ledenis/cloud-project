@@ -19,7 +19,8 @@ public class GoogleBooksTestServlet extends HttpServlet {
 		// Constructs query
 		String query = req.getParameter("q");
 		if (query == null) {
-			resp.getWriter().println("No 'q' parameter found <br />");
+			resp.getWriter().println(
+					"No 'q' parameter found (?q=isbn:1551923963)<br/><br/>");
 			query = "isbn:1551923963";
 		}
 
@@ -27,7 +28,8 @@ public class GoogleBooksTestServlet extends HttpServlet {
 			books = new GoogleBooks();
 			bookInfo = books.query(query);
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.out);
+			return;
 		}
 
 		req.setAttribute("bookinfo", bookInfo);

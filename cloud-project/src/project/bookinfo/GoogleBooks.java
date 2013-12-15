@@ -41,7 +41,7 @@ public class GoogleBooks {
 	 * 
 	 * @param query
 	 *            Query format:
-	 *            "[<inauthor|isbn|intitle|inpublisher|subject>:]<query>"
+	 *            "[inauthor|isbn|intitle|inpublisher|subject>]<query>"
 	 * @return The first result as a BookInfo object, or null if no books found
 	 * @throws IOException
 	 */
@@ -70,6 +70,8 @@ public class GoogleBooks {
 		bookInfo.setTitle(volumeInfo.getTitle());
 		// Authors
 		bookInfo.setAuthors(volumeInfo.getAuthors());
+		// Publisher
+		bookInfo.setPublisher(volumeInfo.getPublisher());
 		// Description
 		bookInfo.setDescription(volumeInfo.getDescription());
 		// Ratings
