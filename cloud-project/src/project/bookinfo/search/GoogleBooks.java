@@ -1,7 +1,9 @@
-package project.bookinfo;
+package project.bookinfo.search;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+
+import project.bookinfo.BookInfo;
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.json.JsonFactory;
