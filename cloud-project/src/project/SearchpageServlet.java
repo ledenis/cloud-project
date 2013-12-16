@@ -25,17 +25,21 @@ public class SearchpageServlet extends HttpServlet
 		String apirequest = "";
 		GoogleBooks books = null;
 		List<BookInfo> bookInfos = null;
-		resp.setContentType("text/plain");
+		//resp.setContentType("text/plain");
 		
 		switch(req.getParameter("bookcategories"))
 		{
-		case "ISBN":apirequest = "isbn:"+req.getParameter("searchinput"); 
-					break;
-		case "Author":apirequest = "inauthor:"+req.getParameter("searchinput");
-					break;
-		case "Titre":apirequest = "intitle:"+req.getParameter("searchinput");
-					break;
-		default: resp.getWriter().println("Error"); break;
+			case "ISBN":
+				apirequest = "isbn:"+req.getParameter("searchinput"); 
+				break;
+			case "Author":
+				apirequest = "inauthor:"+req.getParameter("searchinput");
+				break;
+			case "Titre":
+				apirequest = "intitle:"+req.getParameter("searchinput");
+				break;
+			default: resp.getWriter().println("Error");
+				break;
 		}
 		
 		if(!apirequest.equals(""))

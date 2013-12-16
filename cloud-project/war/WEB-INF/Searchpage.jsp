@@ -4,7 +4,7 @@
 <t:wrapper>
 	<form method="post" action="/searchpage" class="form-inline" role="search">
 		<div class="form-group">
-			<input type="text" name="searchinput" size="100" class="form-control" placeholder="Author, title or ISBN..."/>
+			<input type="text" required name="searchinput" size="100" class="form-control" placeholder="Author, title or ISBN..."/>
 		</div>
 		<div class="form-group">
 			<label>Search by:</label>

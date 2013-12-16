@@ -20,10 +20,11 @@ public class UserLibrary {
 	public UserLibrary(User user)
 	{
 		this.user = user;
-		shelves = new LinkedList<>();
-		
-		//createBS();
-		
+		shelves = new LinkedList<>();		
+	}
+	
+	public void retrieveInfos()
+	{
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		
 		String userId = user.getUserId();
@@ -40,8 +41,7 @@ public class UserLibrary {
 		}
 	}
 	
-	@SuppressWarnings("unused")
-	private void createBS()
+	public void createBS(String name)
 	{
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
@@ -49,7 +49,7 @@ public class UserLibrary {
 		Key userKey = KeyFactory.createKey("User", userId);
 		
 		Entity bs = new Entity("Bookshelf", userKey);
-		bs.setProperty("name", "owned");
+		bs.setProperty("name", name);
 		
 		datastore.put(bs);
 	}

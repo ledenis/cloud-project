@@ -47,15 +47,14 @@ public class Bookshelf {
 		
 	}
 	
-	@SuppressWarnings("unused")
-	private void createBook()
+	public void createBook(String isbn)
 	{
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
 		Key bsKey = KeyFactory.createKey("Bookshelf", name);
 		
 		Entity book = new Entity("Book", bsKey);
-		book.setProperty("isbn", 1551923963);
+		book.setProperty("isbn", isbn);
 		
 		datastore.put(book);
 	}
