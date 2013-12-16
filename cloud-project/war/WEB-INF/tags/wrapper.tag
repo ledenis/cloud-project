@@ -1,4 +1,11 @@
 <%@tag description="Simple Wrapper Tag" pageEncoding="UTF-8"%>
+<%@ tag import="com.google.appengine.api.users.User" %> 
+<%@ tag import="com.google.appengine.api.users.UserService" %> 
+<%@ tag import="com.google.appengine.api.users.UserServiceFactory" %>
+
+ 
+<% UserService userService = UserServiceFactory.getUserService(); 
+User user=userService.getCurrentUser();  %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -31,10 +38,12 @@
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">Bookshelves</a></li>
               <li><a href="#contact">Search a book</a></li>
+              <li><a href="<%= userService.createLogoutURL("/") %>">sign out</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
+      
   <jsp:doBody/>
 </body>
 </html>
