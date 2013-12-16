@@ -38,16 +38,12 @@ User user=userService.getCurrentUser();  %>
 	          <li class="active"><a href="#">Home</a></li>
 	          <li><a href="#about">Bookshelves</a></li>
 	          <li><a href="#contact">Search a book</a></li>
-	          <li><a href="<%= userService.createLogoutURL("/") %>">Sign out</a></li>
+	          <li><a href="<%= userService.createLogoutURL("/") %>">sign out</a></li>
 	        </ul>
 	      </div><!--/.nav-collapse -->
 	    </div>
 	</div>
-	<div class="container" style="margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-	display: table;
-  height: auto;">
+	<div class="container">
 		<jsp:doBody/>
 	</div>
 </body>
