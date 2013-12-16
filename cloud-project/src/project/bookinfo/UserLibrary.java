@@ -9,7 +9,6 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
-import com.google.appengine.api.datastore.Link;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.users.User;
 
@@ -41,6 +40,7 @@ public class UserLibrary {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void createBS()
 	{
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();

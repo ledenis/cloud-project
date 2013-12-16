@@ -64,6 +64,7 @@ public class GoogleBooks {
 		return null;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public java.util.List<BookInfo> query2(String query) throws IOException {
 		// Set query string (and filter)
 		List volumesList = books.volumes().list(query);
@@ -71,6 +72,7 @@ public class GoogleBooks {
 
 		// Execute the query.
 		Volumes volumes = volumesList.execute();
+		@SuppressWarnings("rawtypes")
 		java.util.List<BookInfo> results = new LinkedList();
 		if (volumes.getTotalItems() != 0 && volumes.getItems() != null) {
 			

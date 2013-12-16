@@ -1,27 +1,17 @@
 package project.bookinfo.search;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
-import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
-import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Text;
-import com.google.appengine.api.users.User;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
+//import com.google.appengine.api.users.User;
+//import com.google.appengine.api.users.UserService;
+//import com.google.appengine.api.users.UserServiceFactory;
 
-import project.bookinfo.BookInfo;
-import project.bookinfo.UserLibrary;
+//import project.bookinfo.BookInfo;
 
 public class GoogleBooksTestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,10 +19,10 @@ public class GoogleBooksTestServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		UserService userService = UserServiceFactory.getUserService();
+		/*UserService userService = UserServiceFactory.getUserService();
         User user = userService.getCurrentUser();
 			GoogleBooks books = null;
-			BookInfo bookInfo = null;
+			BookInfo bookInfo = null;*/
 
 			// Constructs query
 			String query = req.getParameter("q");
