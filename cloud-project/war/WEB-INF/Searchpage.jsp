@@ -5,14 +5,17 @@
 	<form method="post" action="/searchpage" class="form-inline" role="search">
 		<div class="form-group">
 			<input type="text" name="searchinput" size="100" class="form-control" placeholder="Author, title or ISBN..."/>
-			Search by:
-			<select name="bookcategories">
+		</div>
+		<div class="form-group">
+			<label>Search by:</label>
+			<select class="form-control" name="bookcategories">
 				<option value="ISBN">isbn</option>
 				<option value="Author">author</option>
 				<option value="Titre">titre</option>
-			</select>
+			</select>		
+		</div>
+		<div class="form-group">
 			<input type="submit" value="Search Book" class="btn btn-primary btn-lg"/>
 		</div>
 	</form>
-	
 </t:wrapper>
