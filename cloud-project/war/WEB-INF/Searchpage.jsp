@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<<<<<<< HEAD
 <t:wrapper>
 	<form method="post" action="/searchpage" class="form-inline" role="search">
 		<input type="text" name="searchinput" size="100" class="form-control" placeholder="Author, title or ISBN..."/>
