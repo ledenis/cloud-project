@@ -2,6 +2,7 @@ package project.bookinfo.search;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.LinkedList;
 
 import project.bookinfo.BookInfo;
 
@@ -58,6 +59,27 @@ public class GoogleBooks {
 		if (volumes.getTotalItems() != 0 && volumes.getItems() != null) {
 			constructBookInfo(volumes.getItems().get(0));
 			return bookInfo;
+		}
+
+		return null;
+	}
+	
+	public java.util.List<BookInfo> query2(String query) throws IOException {
+		// Set query string (and filter)
+		List volumesList = books.volumes().list(query);
+		//volumesList.setFilter("ebooks");
+
+		// Execute the query.
+		Volumes volumes = volumesList.execute();
+		java.util.List<BookInfo> results = new LinkedList();
+		if (volumes.getTotalItems() != 0 && volumes.getItems() != null) {
+			
+			for (Volume v : volumes.getItems()) {
+				constructBookInfo(v);
+				results.add(bookInfo);
+			}
+			
+			return results;
 		}
 
 		return null;

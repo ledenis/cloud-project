@@ -42,7 +42,7 @@ public class GoogleBooksTestServlet extends HttpServlet {
 				query = "isbn:1551923963";
 			}
 
-			try {
+			/*try {
 				books = new GoogleBooks();
 				bookInfo = books.query(query);
 			} catch (Exception e) {
@@ -55,7 +55,7 @@ public class GoogleBooksTestServlet extends HttpServlet {
 			UserLibrary u = new UserLibrary(user);
 			req.setAttribute("user", u);
 			
-		
+		*/
 		
 		
 		// Forward to the jsp
