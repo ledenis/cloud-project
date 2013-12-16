@@ -33,13 +33,15 @@ public class Bookshelf {
 					
 			DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 	
-			Key bsKey = KeyFactory.createKey("Bookshelf", name);
-			Query query = new Query("Book", bsKey);
-			
-			List<Entity> bookshelf = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
-			for (Entity e : bookshelf) {
-				BookInfo bookInfo = gbooks.query("isbn:"+e.getProperty("isbn"));
-				books.add(bookInfo);
+			if (name != null) {
+				Key bsKey = KeyFactory.createKey("Bookshelf", name);
+				Query query = new Query("Book", bsKey);
+				
+				List<Entity> bookshelf = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
+				for (Entity e : bookshelf) {
+					BookInfo bookInfo = gbooks.query("isbn:"+e.getProperty("isbn"));
+					books.add(bookInfo);
+				}
 			}
 		} catch (GeneralSecurityException | IOException e1) {
 			e1.printStackTrace();

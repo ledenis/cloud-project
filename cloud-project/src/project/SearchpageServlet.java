@@ -8,7 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+
 import project.bookinfo.BookInfo;
+import project.bookinfo.UserLibrary;
 import project.bookinfo.search.GoogleBooks;
 
 @SuppressWarnings("serial")
@@ -53,6 +58,14 @@ public class SearchpageServlet extends HttpServlet
 		}
 		
 		req.setAttribute("bookinfos", bookInfos);
+		
+		// Bookshelves
+		UserService userService = UserServiceFactory.getUserService();
+        User user = userService.getCurrentUser();
+        
+        UserLibrary ul = new UserLibrary(user);
+        ul.retrieveInfos();
+		req.setAttribute("bookshelves", ul.getBookshelves());
 		
 		// Forward to the jsp
 		getServletContext().getRequestDispatcher("/WEB-INF/resultsearch.jsp").forward(req, resp);

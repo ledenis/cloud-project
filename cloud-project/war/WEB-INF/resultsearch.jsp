@@ -15,15 +15,15 @@
 <c:forEach var="bookinfo" items="${bookinfos}" varStatus="counter">
 
 <tr>
-<td><c:out value="${bookinfo.title}" /></td>
+<td>${bookinfo.title}</td>
 <td>${bookinfo.authors[0]}</td>
 
 <td>
 <div class="form-group">
 			<select class="form-control" name="bookcategories">
-				<option value="ISBN">isbn</option>
-				<option value="Author">author</option>
-				<option value="Titre">titre</option>
+				<c:forEach var="shelf" items="${bookshelves}">
+				<option value="${shelf.name}">${shelf.name}</option>
+				</c:forEach>
 			</select>		
 		</div>
 		<div class="form-group">
