@@ -15,20 +15,21 @@
 <c:forEach var="bookinfo" items="${bookinfos}" varStatus="counter">
 
 <tr>
-<td>${bookinfo.title}</td>
+<td>${bookinfo.title} <a href="http://www.amazon.com/gp/search/ref=sr_adv_b/?search-alias=stripbooks&field-isbn=${bookinfo.isbn}">Search on Amazon</a> </td>
 <td>${bookinfo.authors[0]}</td>
 
 <td>
-<div class="form-group">
-			<select class="form-control" name="bookcategories">
+	<div class="form-group">
+		<form action="/addBook?isbn=${bookinfo.isbn}" method="post">
+			<select class="form-control" name="bookshelf">
 				<c:forEach var="shelf" items="${bookshelves}">
 				<option value="${shelf.name}">${shelf.name}</option>
 				</c:forEach>
 			</select>		
-		</div>
-		<div class="form-group">
+		
 			<input type="submit" value="Add" class="btn btn-primary"/>
-		</div>
+		</form>
+	</div>
 </td>
 </tr>
 
