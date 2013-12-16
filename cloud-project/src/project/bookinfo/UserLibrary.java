@@ -53,6 +53,23 @@ public class UserLibrary {
 		
 		datastore.put(bs);
 	}
+
+	/*
+	 * xxx: Untested deleteBS
+	 */
+	public void deleteBS(String name)
+	{
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+		String userId = user.getUserId();
+	    Key userKey = KeyFactory.createKey("User", userId);
+
+		Entity bs = new Entity("Bookshelf", userKey);
+		if (bs.hasProperty(name)) {
+			bs.removeProperty(name);
+			datastore.put(bs);
+		}
+	}
 	
 	public List<Bookshelf> getBookshelves()
 	{
