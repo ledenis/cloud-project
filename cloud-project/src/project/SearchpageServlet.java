@@ -21,8 +21,7 @@ public class SearchpageServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException ,IOException
 	{
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
+		getServletContext().getRequestDispatcher("/WEB-INF/Searchpage.jsp").forward(req, resp);
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException ,IOException
