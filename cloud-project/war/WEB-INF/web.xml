@@ -40,6 +40,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/parser_test</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+    	<servlet-name>createShelf</servlet-name>
+		<servlet-class>project.bookinfo.search.CreateShelfServlet</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	    <servlet-name>createShelf</servlet-name>
+	    <url-pattern>/createShelf</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>createShelfForm</servlet-name>
+    	<jsp-file>WEB-INF/formShelf.jsp</jsp-file>
+	</servlet>	
+	<servlet-mapping>
+	    <servlet-name>createShelfForm</servlet-name>
+	    <url-pattern>/create</url-pattern>
+	</servlet-mapping>
 	
 	<security-constraint>
         <web-resource-collection>
