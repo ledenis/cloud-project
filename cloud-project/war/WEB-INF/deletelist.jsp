@@ -4,7 +4,12 @@
 <t:wrapper>
 	<form method="post" action="/createShelf" class="form-inline" role="search">
 		<div class="form-group">
-			<input type="text" name="shelfName" required size="100" class="form-control" placeholder="Name of the shelf"/>
+			<label>Search by:</label>
+			<select class="form-control" name="bookcategories">
+				<option value="ISBN">isbn</option>
+				<option value="Author">author</option>
+				<option value="Titre">titre</option>
+			</select>
 		</div>
 		<div class="form-group">
 			<input type="submit" value="Create Shelf" class="btn btn-primary btn-lg"/>
