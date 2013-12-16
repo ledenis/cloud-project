@@ -43,7 +43,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     </security-constraint>
     
     <welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>WEB-INF/searchpage.jsp</welcome-file>
 	</welcome-file-list>
 	
 	
