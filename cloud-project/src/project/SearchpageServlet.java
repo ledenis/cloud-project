@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import project.bookinfo.BookInfo;
 import project.bookinfo.search.GoogleBooks;
 
+@SuppressWarnings("serial")
 public class SearchpageServlet extends HttpServlet 
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException ,IOException

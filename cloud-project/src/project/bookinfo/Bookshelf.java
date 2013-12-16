@@ -2,12 +2,8 @@ package project.bookinfo;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
 
 import project.bookinfo.search.GoogleBooks;
 
@@ -18,14 +14,12 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.users.User;
 
 public class Bookshelf {
 
 	private String name;
 	
 	List<BookInfo> books;
-	@SuppressWarnings("unchecked")
 	public Bookshelf(Entity entity)
 	{
 		name = (String) entity.getProperty("name");
@@ -53,6 +47,7 @@ public class Bookshelf {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void createBook()
 	{
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
