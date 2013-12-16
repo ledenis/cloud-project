@@ -22,8 +22,9 @@ public class GoogleBooks {
 	// Google API objects
 	private JsonFactory jsonFactory;
 	private Books books;
-	private static final String API_KEY = "AIzaSyCYoA48GD3OwD-7n3cyGQYG_DwPX2OQWkQ";
-	private static final String APP_NAME = "cloud-project";
+	//private static final String API_KEY = "AIzaSyCYoA48GD3OwD-7n3cyGQYG_DwPX2OQWkQ";
+	private static final String API_KEY = "AIzaSyDH5ZUIP_aO5rX7ykwTAtD8LvJL3GrhGwo";
+	private static final String APP_NAME = "aaaa";
 
 	private BookInfo bookInfo = null;
 
@@ -50,7 +51,7 @@ public class GoogleBooks {
 	public BookInfo query(String query) throws IOException {
 		// Set query string (and filter)
 		List volumesList = books.volumes().list(query);
-		volumesList.setFilter("ebooks");
+		//volumesList.setFilter("ebooks");
 
 		// Execute the query.
 		Volumes volumes = volumesList.execute();
