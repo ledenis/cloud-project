@@ -38,7 +38,7 @@ User user=userService.getCurrentUser();  %>
 	          <li class="active"><a href="#">Home</a></li>
 	          <li><a href="#about">Bookshelves</a></li>
 	          <li><a href="#contact">Search a book</a></li>
-	          <li><a href="<%= userService.createLogoutURL("/") %>">sign out</a></li>
+	          <li><a href="<%= userService.createLogoutURL("/") %>">Sign out</a></li>
 	        </ul>
 	      </div><!--/.nav-collapse -->
 	    </div>

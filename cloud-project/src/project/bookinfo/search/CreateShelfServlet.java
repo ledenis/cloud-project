@@ -18,7 +18,7 @@ public class CreateShelfServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		String name = req.getParameter("bookcategories");
+		String name = req.getParameter("shelfName");
 		
 		UserService userService = UserServiceFactory.getUserService();
         User user = userService.getCurrentUser();
