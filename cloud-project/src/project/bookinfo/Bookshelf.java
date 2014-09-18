@@ -20,6 +20,11 @@ public class Bookshelf {
 	private String name;
 	
 	List<BookInfo> books;
+	
+	public Bookshelf() {
+		books = new LinkedList<>();
+	}
+	
 	public Bookshelf(Entity entity)
 	{
 		name = (String) entity.getProperty("name");
@@ -76,5 +81,9 @@ public class Bookshelf {
 	public String getName()
 	{
 		return name;
+	}
+	
+	public void addBook(BookInfo bookInfo) {
+		books.add(bookInfo);
 	}
 }

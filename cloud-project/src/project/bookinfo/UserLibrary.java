@@ -64,11 +64,12 @@ public class UserLibrary {
 		String userId = user.getUserId();
 	    Key userKey = KeyFactory.createKey("User", userId);
 
-		Entity bs = new Entity("Bookshelf", userKey);
+	    datastore.delete(userKey);
+		/*Entity bs = new Entity("Bookshelf", userKey);
 		if (bs.hasProperty(name)) {
 			bs.removeProperty(name);
 			datastore.put(bs);
-		}
+		}*/
 	}
 	
 	public List<Bookshelf> getBookshelves()

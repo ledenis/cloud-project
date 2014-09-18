@@ -44,6 +44,10 @@ public class SearchpageServlet extends HttpServlet
 		
 		if(!apirequest.equals(""))
 		{
+			// Fix "Cannot determine user location..."?
+			apirequest += "&country=US";
+			resp.getWriter().println("apirequest: " + apirequest);
+			
 			try 
 			{
 				books = new GoogleBooks();

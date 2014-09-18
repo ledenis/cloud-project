@@ -9,9 +9,9 @@
 		<div class="form-group">
 			<label>Search by:</label>
 			<select class="form-control" name="bookcategories">
-				<option value="Titre">titre</option>
-				<option value="Author">author</option>
-				<option value="ISBN">isbn</option>
+				<option value="Titre">Title</option>
+				<option value="Author">Author</option>
+				<option value="ISBN">ISBN</option>
 			</select>		
 		</div>
 		<div class="form-group">

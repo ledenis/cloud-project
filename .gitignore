@@ -1,1 +1,2 @@
 cloud-project/war/WEB-INF/classes/*
+cloud-project/war/WEB-INF/appengine-generated/*

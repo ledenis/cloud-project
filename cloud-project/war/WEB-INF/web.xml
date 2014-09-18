@@ -67,6 +67,24 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <url-pattern>/addBook</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+    	<servlet-name>deleteShelf</servlet-name>
+    	<servlet-class>project.bookinfo.DeleteBookShelfServlet</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	    <servlet-name>deleteShelf</servlet-name>
+	    <url-pattern>/deleteShelf</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>bookshelves</servlet-name>
+    	<servlet-class>project.BookShelvesServlet</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+	    <servlet-name>bookshelves</servlet-name>
+	    <url-pattern>/bookshelves</url-pattern>
+	</servlet-mapping>
+	
 	<security-constraint>
         <web-resource-collection>
             <web-resource-name>profile</web-resource-name>

@@ -35,10 +35,10 @@ User user=userService.getCurrentUser();  %>
 	      </div>
 	      <div class="navbar-collapse collapse">
 	        <ul class="nav navbar-nav">
-	          <li class="active"><a href="#">Home</a></li>
+	          <li><a href="/">Home</a></li>
+	          <li><a href="/create">Create shelf</a>
 	          <li><a href="/bookshelves">Bookshelves</a></li>
-	          <li><a href="/searchpage">Search a book</a></li>
-	          <li><a href="<%= userService.createLogoutURL("/") %>">sign out</a></li>
+	          <li><a href="<%= userService.createLogoutURL("/") %>">Sign out</a></li>
 	        </ul>
 	      </div><!--/.nav-collapse -->
 	    </div>
